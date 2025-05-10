@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021-2024 The LineageOS Project
+# Copyright (C) 2021-2025 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -36,6 +36,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/display_id_4630946292801050754.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946292801050754.xml
 
+# Lineage Health
+$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/oplus_chg/battery/chg_enable)
+
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \
@@ -65,7 +68,7 @@ PRODUCT_PACKAGES += \
 
 # PowerShare
 PRODUCT_PACKAGES += \
-    vendor.lineage.powershare@1.0-service.oplus
+    vendor.lineage.powershare-service.oplus
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
